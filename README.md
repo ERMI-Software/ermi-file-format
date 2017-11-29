@@ -4,7 +4,7 @@ ERMI is a lightweight transaction monitoring tool designed to simplify complianc
 
 ## Overview
 
-For batch operation ERMI consumes a CSV [RFC 4180](https://tools.ietf.org/html/rfc4180) formatted text file. This file is made up of a number of columns representing the ERMI Data Model. This file is versioned using the [semvar versioning system](https://semver.org)
+For batch operation ERMI consumes a CSV [RFC 4180](https://tools.ietf.org/html/rfc4180) formatted text file. This file is made up of a number of columns representing the ERMI Data Model. This file is versioned using the [semvar versioning system](https://semver.org). The version can be found at the top of this document, the latest version can be found at  https://github.com/ermi-ltd/ermi-file-format/releases
 
 ## ERMI Data Model.
 
@@ -77,7 +77,7 @@ The following columns **SHOULD** be present for the beneficiary.
 | beneficiaryAccountRoutingCode | Beneficiaries account routine code, clearing code, or sort code  | 0-9[a-Z] |
 | beneficiaryAccountIBAN | Beneficiaries account IBAN  | 0-9[a-Z] |
 
-## Support
+## Support
 
 If you require support, please contact support@ermi.co.uk or speak with your MLRO
 
