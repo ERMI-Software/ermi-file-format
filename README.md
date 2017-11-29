@@ -61,7 +61,7 @@ The following columns **SHOULD** be present for the payer.
 | payerAccountNumber | Payer account number within.  | 0-9[a-Z] |
 | payerAccountRoutingCode | Payer account routine code, clearing code, or sort code  | 0-9[a-Z] |
 | payerAccountIBAN | Payer account IBAN  | 0-9[a-Z] |
-| payerRisk | The risk profile of the payer | 'low', 'meduim' pr 'high |
+| payerRisk | The risk profile of the payer | 'low', 'meduim' or 'high |
 
 The following columns **SHOULD** be present for the beneficiary.
 
