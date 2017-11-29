@@ -30,7 +30,7 @@ The following conventions are true for all ERMI Batch File Format files:
 1. The first row **MUST** be a heading row listing columns. Columns **MAY** appear in any order.
 2. Date columns **MUST** be in [ISO-8061 format.](https://www.iso.org/iso-8601-date-and-time-format.html)
 3. Countries **SHOULD** be in [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) format.
-4. Currencies are referred to using the [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) standard names
+4. Currencies **MUST** be referred too using the [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) standard names
 
 ## Columns Overview.
 
