@@ -16,7 +16,7 @@ For ERMI to effectively monitoring transactions, a few different items of data a
 
 **Transaction Information** - the facts of the payment, such as amount, currency, time and status.
 
-**Account Information** - the specific accounts used by the beneficiary and the payee for this transaction
+**Account Information** - the specific accounts used by the beneficiary and the payer for this transaction
 
 ## Examples.
 
