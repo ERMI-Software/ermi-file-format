@@ -1,0 +1,3 @@
+transactionID,payerID,payerType,currency,value,payerCountry,beneficiaryCountry,beneficiaryID,date
+12345,209090,individual,USD,20000,UK,Germany,208976,2017-12-14T00:00:00.000Z
+12346,201034,corporate,EUR,100000,UK,USA,897176,2017-12-11T00:00:00.000Z
