@@ -12,9 +12,9 @@ For ERMI to effectively monitoring transactions, a few different items of data a
 
 **Payer** - The payer is the person or legal entity initiating a transaction. 
 
-**Beneficiary** - The receiving is the person or legal entity receiving a payment.
+**Beneficiary** - The beneficiary is the person or legal entity receiving a payment.
 
-**Transaction Information** - the facts of the payment, such as amount, currency, time and status.
+**Transaction Information** - the facts of the transaction, such as amount, currency, time and status.
 
 **Account Information** - the specific accounts used by the beneficiary and the payer for this transaction
 
