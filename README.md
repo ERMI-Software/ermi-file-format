@@ -1,4 +1,4 @@
-# ERMI Batch File Format. (v2.0.1)
+# ERMI Batch File Format. (v2.1.0)
 
 ERMI is a lightweight transaction monitoring tool designed to simplify compliance with AML and related regulations. This repository contains information on the data ERMI requires and documents the format for the input files ERMI accepts when operating in batch analysis mode.
 
@@ -61,6 +61,7 @@ The following columns **SHOULD** be present for the payer.
 | payerAccountNumber | Payer account number within.  | 0-9[a-Z] |
 | payerAccountRoutingCode | Payer account routine code, clearing code, or sort code  | 0-9[a-Z] |
 | payerAccountIBAN | Payer account IBAN  | 0-9[a-Z] |
+| payerAccountBicSwift | Payer account Bic Swift  | 0-9[a-Z] |
 | payerRisk | The risk profile of the payer | 'low', 'meduim' or 'high |
 
 The following columns **SHOULD** be present for the beneficiary.
@@ -77,6 +78,7 @@ The following columns **SHOULD** be present for the beneficiary.
 | beneficiaryAccountNumber | Beneficiaries account number.  | 0-9[a-Z] |
 | beneficiaryAccountRoutingCode | Beneficiaries account routine code, clearing code, or sort code  | 0-9[a-Z] |
 | beneficiaryAccountIBAN | Beneficiaries account IBAN  | 0-9[a-Z] |
+| beneficiaryAccountBicSwift | Beneficiaries account Bic Swift  | 0-9[a-Z] |
 
 ## Support
 
