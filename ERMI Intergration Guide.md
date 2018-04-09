@@ -1,6 +1,6 @@
 # ERMI Integration Guide.
 
-The purpose of this document is too provide a high level overview of ERMI and to provide guidance on how to get data into and out of ERMI.
+The purpose of this document is to provide a high level overview of ERMI and to provide guidance on how to get data in to and out of ERMI.
 
 ERMI is intended to be flexible, this document outlines the most popular options and approaches however we're happy to approach things differently if needed. If you require any support, please contact Mike or Jamie.
 
