@@ -6,15 +6,15 @@ ERMI is intended to be flexible, this document outlines the most popular options
 
 ## Document Outline:
 
-1. High Level Description & Glossary
-2. Getting Started
-3. Getting Data into ERMI
-	1. Push model
-	2. Pull model
-4. Getting Results out of ERMI
-	1. Human Readable Reports
-	2. Machine readable data files
-5. Error Handling & Validation
+1. [High Level Description & Glossary](#1-high-level-description--glossary)
+2. [Getting Started](#2-getting-started)
+3. [Getting Data into ERMI](#3-getting-data-into-ermi)
+	1. [Pull model]((#i-pull-model))
+	2. [Push model](#ii-push-model)
+4. [Getting Results out of ERMI](#4-getting-results-out-of-ermi)
+	1. [Human Readable Reports](#i-human-readable-report)
+	2. [Machine readable data files](#ii-machine-readable-data-files)
+5. [Error Handling & Validation](#5-error-handling--validation)
 
 ## 1. High Level Description & Glossary
 
@@ -82,7 +82,9 @@ The report period depends on how often client jobs are being run. Typically repo
 Alongside the report in the file are one or more machine readable data files. Each files is a CSV file which builds on the ermi-file-format by adding three additional columns:
 
 **Flag Reason** - the reason the transaction or payer or was flagged. 
+
 **Flag Level** - the level of the flag (between yellow, orange and red)
+
 **Flag Code**- an internal code for the flag, used for grouping and internationalisation  
 
 ## 5. Error Handling & Validation
