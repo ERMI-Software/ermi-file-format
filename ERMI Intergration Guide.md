@@ -49,7 +49,7 @@ We have the ability to do some data conversion on the fly, so if you encounter a
 
 To get data into ERMI we require a *source*. Typically a source is a file on a storage system, or an API.  
 
-ERMI supports two types of sources, *Push* sources where data is pushed by the client into a resource managed by ERMI, and *Pull* sources where data is pulled into ERMI client a client system on demand. 
+ERMI supports two types of sources, *Push* sources where data is pushed by the client into a resource managed by ERMI, and *Pull* sources where data is pulled into ERMI from a client's system on demand. 
 
 Which model is best will depend on a number of factors such as frequency of analysis and volume of data. 
 
