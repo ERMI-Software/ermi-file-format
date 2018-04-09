@@ -28,15 +28,20 @@ ERMI has the following process:
 The key terms are:
 
 **Client** - The client is the organisation which holds the transaction data for ERMI to monitor.
+
 **ERMI** - ERMI is the name of the transaction monitoring system, and the company.
+
 **Job** - a job is a single run of ERMI. Jobs are typically run weekly or daily. 
+
 **Results** - results represent the output of a single job, consisting of a human readable report and one or more machine readable data files.
+
 **Source** - The souce is where ERMI gets the data from. This may be an API, or a data storage system such as S3 or Drive.
+
 **Output** - The ouput is the location where results are too pushed
 
 ## 2. Getting started. 
 
-When getting started with ERMI, we may ask you to provide an example file for us to run. We will then validate and run it a few times. This gives us a chance to check the file is running smoothly and to correct any minor issues.
+When getting started with ERMI, we may ask you to provide an example file. We will then validate and run it a few times. This gives us a chance to check the file is running smoothly and to correct any minor issues.
 
 We have the ability to do some data conversion on the fly, so if you encounter any issues please let us a know and we will try out best to help you.
 
@@ -48,7 +53,7 @@ ERMI supports two types of sources, *Push* sources where data is pushed by the c
 
 Which model is best will depend on a number of factors such as frequency of analysis and volume of data. 
 
-### Pull Model
+### Pull Model
 
 The *pull* model is where ERMI accesses a client owned system to pull transaction data on demand for each job. The client system is either an API or access to an object store (such as S3). If the file is loaded from an object store it would be in the ERMI file format.
 
