@@ -9,7 +9,7 @@ ERMI is intended to be flexible, this document outlines the most popular options
 1. [High Level Description & Glossary](#1-high-level-description--glossary)
 2. [Getting Started](#2-getting-started)
 3. [Getting Data into ERMI](#3-getting-data-into-ermi)
-	1. [Pull model]((#i-pull-model))
+	1. [Pull model](#i-pull-model)
 	2. [Push model](#ii-push-model)
 4. [Getting Results out of ERMI](#4-getting-results-out-of-ermi)
 	1. [Human Readable Reports](#i-human-readable-report)
