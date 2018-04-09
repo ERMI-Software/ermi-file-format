@@ -1,8 +1,8 @@
-# ERMI Integration Guide.
+# ERMI Integration Guide
 
 The purpose of this document is to provide a high level overview of ERMI and to provide guidance on how to get data in to and out of ERMI.
 
-ERMI is intended to be flexible, this document outlines the most popular options and approaches however we're happy to approach things differently if needed. If you require any support, please contact Mike or Jamie.
+ERMI is intended to be flexible, this document outlines the most popular options and approaches however we're happy to approach things differently if needed. If you require any support, please contact us.
 
 ## Document Outline:
 
@@ -39,7 +39,7 @@ The key terms are:
 
 **Output** - The output is the location where results are too pushed
 
-## 2. Getting started. 
+## 2. Getting started
 
 When getting started with ERMI, we may ask you to provide an example file. We will then validate and run it a few times. This gives us a chance to check the file is running smoothly and to correct any minor issues.
 
@@ -55,17 +55,17 @@ Which model is best will depend on a number of factors such as frequency of anal
 
 ### i. Pull Model
 
-The *pull* model is where ERMI accesses a client owned system to pull transaction data on demand for each job. The client system is either an API or access to an object store (such as S3). If the file is loaded from an object store it would be in the ERMI file format.
+The *pull* model is where ERMI accesses a client owned system to pull transaction data on demand for each job. The client system is either an API or access to an object store (such as S3). If the file is loaded from an object store it would be in the [ERMI file format](https://github.com/ermi-ltd/ermi-file-format) and named ````transactions.csv````.
 
-For a pull source the data is only stored on a client system. The clients data is copied for processing, but deleted once processing is completed.
+For a pull source the data is only stored on the client's system. The client's data is copied for processing, but deleted once processing is completed.
 
-The pull approach is well suited for clients using currency platforms such as The Currency Cloud. For client using the pull approach we can provide a conversion / integration service to aid in formatting and validating data.
+The pull approach is well suited for clients using currency platforms such as The Currency Cloud. For clients using the pull approach we can provide a conversion / integration service to aid in formatting and validating data.
 
-### ii. Push Model.
+### ii. Push Model
 
-The push model is where the client pushes data to ERMI ahead of each scheduled job. ERMI can accept data via AWS S3, or via Google Drive. Under the push model, the ERMI owned S3 bucket retains a copy of the clients data until the client deletes it.
+The *push* model is where the client pushes data to ERMI ahead of each scheduled job. ERMI can accept data via AWS S3, or via Google Drive. Under the push model, the ERMI owned S3 bucket retains a copy of the clients data until the client deletes it.
 
-## 4. Getting Results out of ERMI. 
+## 4. Getting Results out of ERMI 
 
 Like sources, results can be pulled from ERMI or pushed from ERMI into a client owned system. ERMI can push results into a client managed S3 bucket, or clients can pull results from a ERMI managed S3 bucket or Google Drive account.
 
@@ -77,7 +77,7 @@ Each set of results include a report is a excel xlsx file intended to be read by
 
 The report period depends on how often client jobs are being run. Typically report periods are 1 day or 7 days.
 
-### ii. Machine Readable Data Files.
+### ii. Machine Readable Data Files
 
 Alongside the report in the file are one or more machine readable data files. Each files is a CSV file which builds on the ermi-file-format by adding three additional columns:
 
@@ -91,7 +91,7 @@ Alongside the report in the file are one or more machine readable data files. Ea
 
 ERMI has two complimentary systems. Error handling (for when something has gone wrong with the system) and validation (when something is wrong with the data).
 
-### Error Handling.
+### Error Handling
 
 We proactively monitoring ERMI during each job. If an error occurs during a job we will retry the job and attempt to work out the issue. If we're unable to resolve the issue we will contact the client to discuss next steps.
 
