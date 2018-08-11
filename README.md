@@ -1,14 +1,14 @@
 # ERMI Batch File Format. (v2.2.0)
 
-ERMI is a lightweight transaction monitoring tool designed to simplify compliance with AML and related regulations. This repository contains information on the data ERMI requires and documents the format for the input files ERMI accepts when operating in batch analysis mode.
+ERMI is a lightweight transaction monitoring tool designed to simplify compliance with AML and related regulations. This repository contains information on the data ERMI and acts as a file format specification.
 
 ## Overview
 
-For batch operation ERMI consumes a CSV [RFC 4180](https://tools.ietf.org/html/rfc4180) formatted text file. This file is made up of a number of columns representing the ERMI Data Model. This file is versioned using the [semvar versioning system](https://semver.org). The version can be found at the top of this document, the latest version can be found at  https://github.com/ermi-ltd/ermi-file-format/releases
+For batch operation ERMI consumes a CSV [RFC 4180](https://tools.ietf.org/html/rfc4180) formatted text file. This file is made up of a number of columns representing the ERMI Data Model. This file is versioned using the [semvar versioning system](https://semver.org). The version can be found at the top of this document, the latest version can always be found at  https://github.com/ermi-ltd/ermi-file-format/releases
 
 ## ERMI Data Model.
 
-The ERMI data model split each transaction into 2 parts. The details of the parties involved, and the information for the transaction itself.
+The ERMI Data Model splits each transaction into 2 parts. The details of the parties involved, and the information for the transaction itself.
 
 ERMI supports up to four parties for each transaction:
 
