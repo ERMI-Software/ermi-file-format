@@ -51,7 +51,7 @@ The following Columns **MUST** be present in all files.
 | transactionID | A uniqueID for this transaction | ```0-9[a-Z]``` |
 | date | The date and time at which the transaction occurred | [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
 | currency | The currency used for the transaction represented as a currency code | [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) | 
-| value | The quantity of currency sent as a float or integer | [0-9]+(\.[0-9][0-9]?)? |
+| value | The quantity of currency sent as a float or integer | ```[0-9]+(\.[0-9][0-9]?)? ```|
 | benificiaryID | A unique ID representing the beneficiary person or legal entity (for example, ERMI Software Ltd) | ```0-9[a-Z]``` |
 | benificiaryCountry | The location where the beneficiary resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
 | payerID | A unique ID representing the beneficiary person or legal entity (for example, ERMI Software Ltd) | ```0-9[a-Z]``` |
