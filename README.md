@@ -26,8 +26,9 @@ Plus the transaction data itself:
 
 ## Examples.
 
-An example of the minimum required for a value ERMI File Format can be found at minimal.csv in this repo. 
-An example of a full ERMI File Format file can be found at full.csv
+An example of the minimum required for a valid ERMI File Format can be found at [minimal.csv](https://github.com/ermi-ltd/ermi-file-format/blob/master/minimal.csv).
+
+An example of a full ERMI File Format file can be found at [full.csv](https://github.com/ermi-ltd/ermi-file-format/blob/master/full.csv).
 
 ## General Conventions.
 
