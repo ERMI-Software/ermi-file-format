@@ -48,13 +48,13 @@ The following Columns **MUST** be present in all files.
 
 | Name   | Brief Description | Validation |
 | :----- | :---------------- | :--------- |
-| transactionID | A uniqueID for this transaction | 0-9[a-Z] |
+| transactionID | A uniqueID for this transaction | ```0-9[a-Z]``` |
 | date | The date and time at which the transaction occurred | [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
 | currency | The currency used for the transaction represented as a currency code | [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) | 
 | value | The quantity of currency sent as a float or integer | [0-9]+(\.[0-9][0-9]?)? |
-| benificiaryID | A unique ID representing the beneficiary person or legal entity (for example, ERMI Software Ltd) | 0-9[a-Z] |
+| benificiaryID | A unique ID representing the beneficiary person or legal entity (for example, ERMI Software Ltd) | ```0-9[a-Z]``` |
 | benificiaryCountry | The location where the beneficiary resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
-| payerID | A unique ID representing the beneficiary person or legal entity (for example, ERMI Software Ltd) | 0-9[a-Z] |
+| payerID | A unique ID representing the beneficiary person or legal entity (for example, ERMI Software Ltd) | ```0-9[a-Z]``` |
 | payerCountry | The location where the payer resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
 | payerType   | The payer entity type. | 'individual' or 'corporate' |
 
@@ -64,41 +64,41 @@ The following columns **MAY** be present for the _payer_.
 
 | Name   | Brief Description | Validation |
 | :----- | :---------------- | :--------- |
-| payerFirstName | The payers first name. (Blank if corporate) | 0-9[a-Z] |
-| payerLastName | The payers last name. (Blank if corporate) | 0-9[a-Z] |
-| payerCompanyName | The payers company name (Blank if individual)| 0-9[a-Z] |
-| payerCompaniesHouseNumber | The payers company house number if UK (Blank if individual)| 0-9[a-Z] |
-| payerPostcode | The payers postcode| 0-9[a-Z] |
+| payerFirstName | The payers first name. (Blank if corporate) | ```0-9[a-Z]``` |
+| payerLastName | The payers last name. (Blank if corporate) | ```0-9[a-Z]``` |
+| payerCompanyName | The payers company name (Blank if individual)| ```0-9[a-Z]``` |
+| payerCompaniesHouseNumber | The payers company house number if UK (Blank if individual)| ```0-9[a-Z]``` |
+| payerPostcode | The payers postcode| ```0-9[a-Z]``` |
 | payerCreatedAt | The date and time at which the payer was created| [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
-| payerAccountID | Human readable unique account ID | 0-9[a-Z] |
-| payerAccountNumber | Payer account number within.  | 0-9[a-Z] |
-| payerAccountRoutingCode | Payer account routine code, clearing code, or sort code  | 0-9[a-Z] |
-| payerAccountIBAN | Payer account IBAN  | 0-9[a-Z] |
-| payerAccountBicSwift | Payer account Bic Swift  | 0-9[a-Z] |
+| payerAccountID | Human readable unique account ID | ```0-9[a-Z]``` |
+| payerAccountNumber | Payer account number within.  | ```0-9[a-Z]``` |
+| payerAccountRoutingCode | Payer account routine code, clearing code, or sort code  | ```0-9[a-Z]``` |
+| payerAccountIBAN | Payer account IBAN  | ```0-9[a-Z]``` |
+| payerAccountBicSwift | Payer account Bic Swift  | ```0-9[a-Z]``` |
 | payerRisk | The risk profile of the payer | 'very low', 'low', 'medium', 'medium high', 'high' |
 
 The following columns **MAY** be present for the _beneficiary_.
 
 | Name   | Brief Description | Validation |
 | :----- | :---------------- | :--------- |
-| beneficiaryFirstName | The beneficiaries first name. (Blank if corporate) | 0-9[a-Z] |
-| beneficiaryLastName | The beneficiaries last name. (Blank if corporate) | 0-9[a-Z] |
-| beneficiaryCompanyName | The beneficiaries company name (Blank if individual)| 0-9[a-Z] |
-| beneficiaryPostcode | The beneficiaries postcode| 0-9[a-Z] |
+| beneficiaryFirstName | The beneficiaries first name. (Blank if corporate) | ```0-9[a-Z]``` |
+| beneficiaryLastName | The beneficiaries last name. (Blank if corporate) | ```0-9[a-Z]``` |
+| beneficiaryCompanyName | The beneficiaries company name (Blank if individual)| ```0-9[a-Z]``` |
+| beneficiaryPostcode | The beneficiaries postcode| ```0-9[a-Z]``` |
 | beneficiaryCreatedAt | The date and time at which the beneficiary was created| [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
-| beneficiaryPostcode | The beneficiaries postcode| 0-9[a-Z] |
-| beneficiaryAccountID | Human readable unique account ID | 0-9[a-Z] |
-| beneficiaryAccountNumber | Beneficiaries account number.  | 0-9[a-Z] |
-| beneficiaryAccountRoutingCode | Beneficiaries account routine code, clearing code, or sort code  | 0-9[a-Z] |
-| beneficiaryAccountIBAN | Beneficiaries account IBAN  | 0-9[a-Z] |
-| beneficiaryAccountBicSwift | Beneficiaries account Bic Swift  | 0-9[a-Z] |
+| beneficiaryPostcode | The beneficiaries postcode| ```0-9[a-Z]``` |
+| beneficiaryAccountID | Human readable unique account ID | ```0-9[a-Z]``` |
+| beneficiaryAccountNumber | Beneficiaries account number.  | ```0-9[a-Z]``` |
+| beneficiaryAccountRoutingCode | Beneficiaries account routine code, clearing code, or sort code  | ```0-9[a-Z]``` |
+| beneficiaryAccountIBAN | Beneficiaries account IBAN  | ```0-9[a-Z]``` |
+| beneficiaryAccountBicSwift | Beneficiaries account Bic Swift  | ```0-9[a-Z]``` |
 
 The following columns **MAY** be present for the _sender_.
 
 | Name   | Brief Description | Validation |
 | :----- | :---------------- | :--------- |
-| senderID | Human readable unique sender ID | 0-9[a-Z] |
-| senderCompanyName | The sender company name | 0-9[a-Z] |
+| senderID | Human readable unique sender ID | ```0-9[a-Z]``` |
+| senderCompanyName | The sender company name | ```0-9[a-Z]``` |
 | senderCountry | The location where the sender resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
 | senderRisk | The risk profile of the sender | 'very low', 'low', 'medium', 'medium high', 'high' |
 | senderCreatedAt | The date and time at which the sender was created| [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
@@ -107,11 +107,11 @@ The following columns **MAY** be present for the _receiver_.
 
 | Name   | Brief Description | Validation |
 | :----- | :---------------- | :--------- |
-| receiverId | Human readable unique sender ID | 0-9[a-Z] |
+| receiverId | Human readable unique sender ID | ```0-9[a-Z]``` |
 | receiverType   | The receiver entity type. | 'individual' or 'corporate' |
-| receiverFirstName | The receivers first name. (Blank if corporate) | 0-9[a-Z] |
-| receiverLastName | The receivers last name. (Blank if corporate) | 0-9[a-Z] |
-| receiverCompanyName | The receivers company name (Blank if individual)| 0-9[a-Z] |
+| receiverFirstName | The receivers first name. (Blank if corporate) | ```0-9[a-Z]``` |
+| receiverLastName | The receivers last name. (Blank if corporate) | ```0-9[a-Z]``` |
+| receiverCompanyName | The receivers company name (Blank if individual)| ```0-9[a-Z]``` |
 | receiverCountry | The location where the receiver resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
 | receiverRisk | The risk profile of the receiver | 'very low', 'low', 'medium', 'medium high', 'high' |
 | receiverCreatedAt | The date and time at which the receiver was created| [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
