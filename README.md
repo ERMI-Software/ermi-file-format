@@ -107,7 +107,7 @@ The following columns **MAY** be present for the _receiver_.
 
 | Name   | Brief Description | Validation |
 | :----- | :---------------- | :--------- |
-| receiverId | Human readable unique sender ID | ```0-9[a-Z]``` |
+| receiverId | Human readable unique receiver ID | ```0-9[a-Z]``` |
 | receiverType   | The receiver entity type. | 'individual' or 'corporate' |
 | receiverFirstName | The receivers first name. (Blank if corporate) | ```0-9[a-Z]``` |
 | receiverLastName | The receivers last name. (Blank if corporate) | ```0-9[a-Z]``` |
