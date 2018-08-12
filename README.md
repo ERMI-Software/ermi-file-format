@@ -1,27 +1,34 @@
-# ERMI Batch File Format. (v2.1.0)
+# ERMI Batch File Format. (v2.2.0)
 
-ERMI is a lightweight transaction monitoring tool designed to simplify compliance with AML and related regulations. This repository contains information on the data ERMI requires and documents the format for the input files ERMI accepts when operating in batch analysis mode.
+ERMI is a lightweight transaction monitoring tool designed to simplify compliance with AML and related regulations. This repository contains information on the data ERMI and acts as a file format specification.
 
 ## Overview
 
-For batch operation ERMI consumes a CSV [RFC 4180](https://tools.ietf.org/html/rfc4180) formatted text file. This file is made up of a number of columns representing the ERMI Data Model. This file is versioned using the [semvar versioning system](https://semver.org). The version can be found at the top of this document, the latest version can be found at  https://github.com/ermi-ltd/ermi-file-format/releases
+For batch operation ERMI consumes a CSV [RFC 4180](https://tools.ietf.org/html/rfc4180) formatted text file. This file is made up of a number of columns representing the ERMI Data Model. This file is versioned using the [semvar versioning system](https://semver.org). The version can be found at the top of this document, the latest version can always be found at  https://github.com/ermi-ltd/ermi-file-format/releases
 
 ## ERMI Data Model.
 
-For ERMI to effectively monitoring transactions, a few different items of data are needed. The data model consists of 4 components.
+The ERMI Data Model splits each transaction into 2 parts. The details of the parties involved, and the information for the transaction itself.
 
-**Payer** - The payer is the person or legal entity initiating a transaction. 
+ERMI supports up to four parties for each transaction:
 
-**Beneficiary** - The beneficiary is the person or legal entity receiving a payment.
+**Payer** - The payer is the person or legal entity initiating a transaction, sometimes known as the "ultimate" payer.
+
+**Beneficiary** - The beneficiary is the person or legal entity receiving a payment, sometimes known as the "ultimate" beneficiary
+
+**Sender (optional)** - The legal entity which is sending the payment on behalf of the payer. (Individual senders are not supported)
+
+**Receiver (optional)** - The legal entity or person which is receiving the payment on behalf of the beneficiary 
+
+Plus the transaction data itself:
 
 **Transaction Information** - the facts of the transaction, such as amount, currency, time and status.
 
-**Account Information** - the specific accounts used by the beneficiary and the payer for this transaction
-
 ## Examples.
 
-An example of the minimum required for a value ERMI File Format can be found at minimal.csv in this repo. 
-An example of a full ERMI File Format file can be found at full.csv
+An example of the minimum required for a valid ERMI File Format can be found at [minimal.csv](https://github.com/ermi-ltd/ermi-file-format/blob/master/minimal.csv).
+
+An example of a full ERMI File Format file can be found at [full.csv](https://github.com/ermi-ltd/ermi-file-format/blob/master/full.csv).
 
 ## General Conventions.
 
@@ -34,52 +41,80 @@ The following conventions are true for all ERMI Batch File Format files:
 
 ## Columns Overview.
 
+
+### Require Columns:
+
 The following Columns **MUST** be present in all files.
 
 | Name   | Brief Description | Validation |
 | :----- | :---------------- | :--------- |
-| transactionID | A uniqueID for this transaction | 0-9[a-Z] |
+| transactionID | A uniqueID for this transaction | ```0-9[a-Z]``` |
 | date | The date and time at which the transaction occurred | [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
 | currency | The currency used for the transaction represented as a currency code | [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) | 
-| value | The quantity of currency sent as a float or integer | [0-9]+(\.[0-9][0-9]?)? |
-| benificiaryID | A unique ID representing the beneficiary person or legal entity (for example, ERMI Software Ltd) | 0-9[a-Z] |
+| value | The quantity of currency sent as a float or integer | ```[0-9]+(\.[0-9][0-9]?)? ```|
+| benificiaryID | A unique ID representing the beneficiary person or legal entity (for example, ERMI Software Ltd) | ```0-9[a-Z]``` |
 | benificiaryCountry | The location where the beneficiary resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
-| payerID | A unique ID representing the beneficiary person or legal entity (for example, ERMI Software Ltd) | 0-9[a-Z] |
+| payerID | A unique ID representing the beneficiary person or legal entity (for example, ERMI Software Ltd) | ```0-9[a-Z]``` |
 | payerCountry | The location where the payer resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
 | payerType   | The payer entity type. | 'individual' or 'corporate' |
 
-The following columns **SHOULD** be present for the payer.
+## Optional Columns
+
+The following columns **MAY** be present for the _payer_.
 
 | Name   | Brief Description | Validation |
 | :----- | :---------------- | :--------- |
-| payerFirstName | The payers first name. (Blank if corporate) | 0-9[a-Z] |
-| payerLastName | The payers last name. (Blank if corporate) | 0-9[a-Z] |
-| payerCompanyName | The payers company name (Blank if individual)| 0-9[a-Z] |
-| payerCompaniesHouseNumber | The payers company house number if UK (Blank if individual)| 0-9[a-Z] |
-| payerPostcode | The payers postcode| 0-9[a-Z] |
+| payerFirstName | The payers first name. (Blank if corporate) | ```0-9[a-Z]``` |
+| payerLastName | The payers last name. (Blank if corporate) | ```0-9[a-Z]``` |
+| payerCompanyName | The payers company name (Blank if individual)| ```0-9[a-Z]``` |
+| payerCompaniesHouseNumber | The payers company house number if UK (Blank if individual)| ```0-9[a-Z]``` |
+| payerPostcode | The payers postcode| ```0-9[a-Z]``` |
 | payerCreatedAt | The date and time at which the payer was created| [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
-| payerAccountID | Human readable unique account ID | 0-9[a-Z] |
-| payerAccountNumber | Payer account number within.  | 0-9[a-Z] |
-| payerAccountRoutingCode | Payer account routine code, clearing code, or sort code  | 0-9[a-Z] |
-| payerAccountIBAN | Payer account IBAN  | 0-9[a-Z] |
-| payerAccountBicSwift | Payer account Bic Swift  | 0-9[a-Z] |
-| payerRisk | The risk profile of the payer | 'low', 'meduim' or 'high |
+| payerAccountID | Human readable unique account ID | ```0-9[a-Z]``` |
+| payerAccountNumber | Payer account number within.  | ```0-9[a-Z]``` |
+| payerAccountRoutingCode | Payer account routine code, clearing code, or sort code  | ```0-9[a-Z]``` |
+| payerAccountIBAN | Payer account IBAN  | ```0-9[a-Z]``` |
+| payerAccountBicSwift | Payer account Bic Swift  | ```0-9[a-Z]``` |
+| payerRisk | The risk profile of the payer | 'very low', 'low', 'medium', 'medium high', 'high' |
 
-The following columns **SHOULD** be present for the beneficiary.
+The following columns **MAY** be present for the _beneficiary_.
 
 | Name   | Brief Description | Validation |
 | :----- | :---------------- | :--------- |
-| beneficiaryFirstName | The beneficiaries first name. (Blank if corporate) | 0-9[a-Z] |
-| beneficiaryLastName | The beneficiaries last name. (Blank if corporate) | 0-9[a-Z] |
-| beneficiaryCompanyName | The beneficiaries company name (Blank if individual)| 0-9[a-Z] |
-| beneficiaryPostcode | The beneficiaries postcode| 0-9[a-Z] |
+| beneficiaryFirstName | The beneficiaries first name. (Blank if corporate) | ```0-9[a-Z]``` |
+| beneficiaryLastName | The beneficiaries last name. (Blank if corporate) | ```0-9[a-Z]``` |
+| beneficiaryCompanyName | The beneficiaries company name (Blank if individual)| ```0-9[a-Z]``` |
+| beneficiaryPostcode | The beneficiaries postcode| ```0-9[a-Z]``` |
 | beneficiaryCreatedAt | The date and time at which the beneficiary was created| [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
-| beneficiaryPostcode | The beneficiaries postcode| 0-9[a-Z] |
-| beneficiaryAccountID | Human readable unique account ID | 0-9[a-Z] |
-| beneficiaryAccountNumber | Beneficiaries account number.  | 0-9[a-Z] |
-| beneficiaryAccountRoutingCode | Beneficiaries account routine code, clearing code, or sort code  | 0-9[a-Z] |
-| beneficiaryAccountIBAN | Beneficiaries account IBAN  | 0-9[a-Z] |
-| beneficiaryAccountBicSwift | Beneficiaries account Bic Swift  | 0-9[a-Z] |
+| beneficiaryPostcode | The beneficiaries postcode| ```0-9[a-Z]``` |
+| beneficiaryAccountID | Human readable unique account ID | ```0-9[a-Z]``` |
+| beneficiaryAccountNumber | Beneficiaries account number.  | ```0-9[a-Z]``` |
+| beneficiaryAccountRoutingCode | Beneficiaries account routine code, clearing code, or sort code  | ```0-9[a-Z]``` |
+| beneficiaryAccountIBAN | Beneficiaries account IBAN  | ```0-9[a-Z]``` |
+| beneficiaryAccountBicSwift | Beneficiaries account Bic Swift  | ```0-9[a-Z]``` |
+
+The following columns **MAY** be present for the _sender_.
+
+| Name   | Brief Description | Validation |
+| :----- | :---------------- | :--------- |
+| senderID | Human readable unique sender ID | ```0-9[a-Z]``` |
+| senderCompanyName | The sender company name | ```0-9[a-Z]``` |
+| senderCountry | The location where the sender resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
+| senderRisk | The risk profile of the sender | 'very low', 'low', 'medium', 'medium high', 'high' |
+| senderCreatedAt | The date and time at which the sender was created| [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
+
+The following columns **MAY** be present for the _receiver_.
+
+| Name   | Brief Description | Validation |
+| :----- | :---------------- | :--------- |
+| receiverId | Human readable unique receiver ID | ```0-9[a-Z]``` |
+| receiverType   | The receiver entity type. | 'individual' or 'corporate' |
+| receiverFirstName | The receivers first name. (Blank if corporate) | ```0-9[a-Z]``` |
+| receiverLastName | The receivers last name. (Blank if corporate) | ```0-9[a-Z]``` |
+| receiverCompanyName | The receivers company name (Blank if individual)| ```0-9[a-Z]``` |
+| receiverCountry | The location where the receiver resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
+| receiverRisk | The risk profile of the receiver | 'very low', 'low', 'medium', 'medium high', 'high' |
+| receiverCreatedAt | The date and time at which the receiver was created| [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
 
 ## Support
 
