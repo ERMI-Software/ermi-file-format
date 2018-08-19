@@ -102,6 +102,12 @@ The following columns **MAY** be present for the _sender_.
 | senderCountry | The location where the sender resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
 | senderRisk | The risk profile of the sender | 'very low', 'low', 'medium', 'medium high', 'high' |
 | senderCreatedAt | The date and time at which the sender was created| [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
+| senderPostcode | The senders postcode| ```0-9[a-Z]``` |
+| senderAccountID | Human readable unique account ID | ```0-9[a-Z]``` |
+| senderAccountNumber | Senders account number.  | ```0-9[a-Z]``` |
+| senderAccountRoutingCode | Senders account routine code, clearing code, or sort code  | ```0-9[a-Z]``` |
+| senderAccountIBAN | Senders account IBAN  | ```0-9[a-Z]``` |
+| senderAccountBicSwift | Senders account Bic Swift  | ```0-9[a-Z]``` |
 
 The following columns **MAY** be present for the _receiver_.
 
@@ -115,6 +121,12 @@ The following columns **MAY** be present for the _receiver_.
 | receiverCountry | The location where the receiver resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
 | receiverRisk | The risk profile of the receiver | 'very low', 'low', 'medium', 'medium high', 'high' |
 | receiverCreatedAt | The date and time at which the receiver was created| [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
+| receiverPostcode | The receivers postcode| ```0-9[a-Z]``` |
+| receiverAccountID | Human readable unique account ID | ```0-9[a-Z]``` |
+| receiverAccountNumber | Receivers account number.  | ```0-9[a-Z]``` |
+| receiverAccountRoutingCode | Receivers account routine code, clearing code, or sort code  | ```0-9[a-Z]``` |
+| receiverAccountIBAN | Receivers account IBAN  | ```0-9[a-Z]``` |
+| receiverAccountBicSwift | Receivers account Bic Swift  | ```0-9[a-Z]``` |
 
 ## Support
 
