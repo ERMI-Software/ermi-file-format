@@ -35,14 +35,14 @@ An example of a full ERMI File Format file can be found at [full.csv](https://gi
 The following conventions are true for all ERMI Batch File Format files:
 
 1. The first row **MUST** be a heading row listing columns. Columns **MAY** appear in any order.
-2. Date columns **MUST** be in [ISO-8061 format.](https://www.iso.org/iso-8601-date-and-time-format.html)
+2. Date columns **MUST** be in [ISO-8061 format.](https://www.iso.org/iso-8601-date-and-time-format.html) including a time and timezone.
 3. Countries **SHOULD** be in [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) format.
 4. Currencies **MUST** be referred too using the [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html) standard names
-
+5. Column names are case sensitive and must appears exactly as defined below.
 ## Columns Overview.
 
 
-### Require Columns:
+### Required Columns:
 
 The following Columns **MUST** be present in all files.
 
