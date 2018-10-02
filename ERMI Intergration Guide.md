@@ -69,9 +69,9 @@ The *push* model is where the client pushes data to ERMI ahead of each scheduled
 
 ## 4. Getting Results out of ERMI 
 
-Like sources, results can be pulled from ERMI or pushed from ERMI into a client owned system. ERMI can push results into a client managed S3 bucket, or clients can pull results from a ERMI managed S3 bucket or Google Drive account.
+Like sources, ERMI can push results into a client managed S3 bucket, or clients can pull results from a ERMI managed S3 bucket or Google Drive account.
 
-Each set of results consists of a report and a collection of machine readable files.
+Each set of results consists of a report and a collection of machine readable files. **please note the machine readable files contain additional data which is not in the report*
 
 ### i. Human Readable Report
 
