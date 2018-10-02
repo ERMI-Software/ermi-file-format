@@ -71,7 +71,7 @@ The *push* model is where the client pushes data to ERMI ahead of each scheduled
 
 Like sources, ERMI can push results into a client managed S3 bucket, or clients can pull results from a ERMI managed S3 bucket or Google Drive account.
 
-Each set of results consists of a report and a collection of machine readable files. **please note the machine readable files contain additional data which is not in the report**
+Each set of results consists of a report and a collection of machine readable files. **The machine readable files contain additional data which is not in the report** If a machine readable report is needed, please contact us.
 
 ### i. Human Readable Report
 
