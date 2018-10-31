@@ -1,16 +1,20 @@
 # ERMI Batch File Format. (v2.3.0)
 
-ERMI is a lightweight transaction monitoring tool designed to simplify compliance with AML and related regulations. This repository contains information on the data ERMI and acts as a file format specification.
+ERMI is a lightweight transaction monitoring tool designed to simplify compliance with AML and related regulations. This repository contains information on the ERMI file format and how to provide data to ERMI for analysis.
 
 ## Overview
 
-For batch operation ERMI consumes a CSV [RFC 4180](https://tools.ietf.org/html/rfc4180) formatted text file. This file is made up of a number of columns representing the ERMI Data Model. This file is versioned using the [semvar versioning system](https://semver.org). The version can be found at the top of this document, the latest version can always be found at  https://github.com/ermi-ltd/ermi-file-format/releases
+For batch operation ERMI consumes a CSV [RFC 4180](https://tools.ietf.org/html/rfc4180) formatted text file. This file is made up of a number of columns representing the ERMI Data Model. This specification is versioned using the [semvar versioning system](https://semver.org). The version can be found at the top of this document, the latest version can always be found at  https://github.com/ermi-ltd/ermi-file-format/releases
 
 ## ERMI Data Model.
 
-The ERMI Data Model splits each transaction into 2 parts. The details of the parties involved, and the information for the transaction itself.
+The ERMI Data Model splits each transaction into multiple elements. Each row represents one transactions and consists of:
 
-ERMI supports up to four parties for each transaction:
+1. Up to four parties (see below) who take a role in the transaction.
+2. The transaction details such as date, value and currency
+3. Optional configuration and rule targetting settings.
+
+The four parties are:
 
 **Payer** - The payer is the person or legal entity initiating a transaction, sometimes known as the "ultimate" payer.
 
@@ -18,17 +22,17 @@ ERMI supports up to four parties for each transaction:
 
 **Sender (optional)** - The legal entity which is sending the payment on behalf of the payer. (Individual senders are not supported)
 
-**Receiver (optional)** - The legal entity or person which is receiving the payment on behalf of the beneficiary 
-
-Plus the transaction data itself:
-
-**Transaction Information** - the facts of the transaction, such as amount, currency, time and status.
+**Receiver (optional)** - The legal entity or person which is receiving the payment on behalf of the beneficiary.
 
 ## Examples.
 
 An example of the minimum required for a valid ERMI File Format can be found at [minimal.csv](https://github.com/ermi-ltd/ermi-file-format/blob/master/minimal.csv).
 
 An example of a full ERMI File Format file can be found at [full.csv](https://github.com/ermi-ltd/ermi-file-format/blob/master/full.csv).
+
+## Configuration
+
+During analysis ERMI will reference external sources such as country risk scores and exchange rate data. These external data sources can be customised to provide targetted screening on a per transation or per payer basis. Please see [configuring custom country risk score]() for more information.
 
 ## General Conventions.
 
@@ -76,6 +80,7 @@ The following columns **MAY** be present for the _payer_.
 | payerAccountIBAN | Payer account IBAN  | ```0-9[a-Z]``` |
 | payerAccountBicSwift | Payer account Bic Swift  | ```0-9[a-Z]``` |
 | payerRisk | The risk profile of the payer | 'very low', 'low', 'medium', 'medium high', 'high' |
+| payerCountryRiskList | The country risk list to use during analysis | 'uk only', 'eu only' or [custom lists]() | 
 
 The following columns **MAY** be present for the _beneficiary_.
 
