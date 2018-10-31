@@ -32,7 +32,7 @@ An example of a full ERMI File Format file can be found at [full.csv](https://gi
 
 ## Configuration
 
-During analysis ERMI will reference external sources such as country risk scores and exchange rate data. These external data sources can be customised to provide targeted screening on a per transaction or per payer basis. If a custom list is required, please contact [our support team](support@ermi.couk)
+During analysis ERMI will reference external sources such as country risk scores and exchange rate data. These external data sources can be customised to provide targeted screening on a per transaction or per payer basis. If a custom list is required, please contact [our support team](mailto:support@ermi.couk)
 
 ## General Conventions.
 
