@@ -80,7 +80,7 @@ The following columns **MAY** be present for the _payer_.
 | payerAccountIBAN | Payer account IBAN  | ```0-9[a-Z]``` |
 | payerAccountBicSwift | Payer account Bic Swift  | ```0-9[a-Z]``` |
 | payerRisk | The risk profile of the payer | 'very low', 'low', 'medium', 'medium high', 'high' |
-| payerCountryRiskList | The country risk list to use during analysis | 'uk only', 'eu only' or [custom lists]() | 
+| payerCountryRiskList | The country risk list to use during analysis | 'uk only', 'eu only' or [custom lists](#configuration) | 
 
 The following columns **MAY** be present for the _beneficiary_.
 
