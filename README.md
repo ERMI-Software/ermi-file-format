@@ -96,6 +96,7 @@ The following columns **MAY** be present for the _beneficiary_.
 | beneficiaryAccountID | Human readable unique account ID | ```0-9[a-Z]``` |
 | beneficiaryAccountNumber | Beneficiaries account number.  | ```0-9[a-Z]``` |
 | beneficiaryAccountRoutingCode | Beneficiaries account routine code, clearing code, or sort code  | ```0-9[a-Z]``` |
+| beneficiaryAccountCountry | The location of the beneficiaries bank account branch | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
 | beneficiaryAccountIBAN | Beneficiaries account IBAN  | ```0-9[a-Z]``` |
 | beneficiaryAccountBicSwift | Beneficiaries account Bic Swift  | ```0-9[a-Z]``` |
 
@@ -112,6 +113,7 @@ The following columns **MAY** be present for the _sender_.
 | senderAccountID | Human readable unique account ID | ```0-9[a-Z]``` |
 | senderAccountNumber | Senders account number.  | ```0-9[a-Z]``` |
 | senderAccountRoutingCode | Senders account routine code, clearing code, or sort code  | ```0-9[a-Z]``` |
+| senderAccountCountry | The location of the beneficiaries bank account branch | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
 | senderAccountIBAN | Senders account IBAN  | ```0-9[a-Z]``` |
 | senderAccountBicSwift | Senders account Bic Swift  | ```0-9[a-Z]``` |
 
