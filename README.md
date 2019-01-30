@@ -1,4 +1,4 @@
-# ERMI Batch File Format. (v2.3.0)
+# ERMI Batch File Format. (v2.4.0)
 
 ERMI is a lightweight transaction monitoring tool designed to simplify compliance with AML and related regulations. This repository contains information on the ERMI file format and how to provide data to ERMI for analysis.
 
