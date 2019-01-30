@@ -82,6 +82,13 @@ The following columns **MAY** be present for the _payer_.
 | payerAccountBicSwift | Payer account Bic Swift  | ```0-9[a-Z]``` |
 | payerRisk | The risk profile of the payer | 'very low', 'low', 'medium', 'medium high', 'high' |
 | payerCountryRiskList | The country risk list to use during analysis | 'default' or [custom lists](#configuration) | 
+| payerCountryRiskList | The country risk list to use during analysis | 'default' or [custom lists](#configuration) | 
+| pastYearExpectedTotal | The expected total value of transactions in the period 365 days before the screen period | ```[0-9]+(\.[0-9][0-9]?)? ```| 
+| pastYearExpectedTotalCurrency | The currency used for setting the past year expected total | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
+| pastYearExpectedTotalLastUpdatedDate | The date when the past year expected total was last updated | [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
+| pastNinetyDayExpectedTotal | The expected total value of transactions in the period 90 days before the screen period | ```[0-9]+(\.[0-9][0-9]?)? ```| 
+| pastNinetyDayExpectedTotalCurrency | The currency used for setting the past ninety day expected total | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
+| pastNinetyDayExpectedTotalLastUpdatedDate | The date when the past ninety day expect total was last updated | [ISO-8061](https://www.iso.org/iso-8601-date-and-time-format.html) |
 
 The following columns **MAY** be present for the _beneficiary_.
 
