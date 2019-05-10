@@ -4,7 +4,7 @@ ERMI is a lightweight transaction monitoring tool designed to simplify complianc
 
 ## Overview
 
-For batch operation ERMI consumes a CSV [RFC 4180](https://tools.ietf.org/html/rfc4180) formatted text file. This file is made up of a number of columns representing the ERMI Data Model. This specification is versioned using the [semvar versioning system](https://semver.org). The version can be found at the top of this document, the latest version can always be found at https://github.com/ermi-ltd/ermi-file-format/
+For batch operation ERMI consumes a CSV [RFC 4180](https://tools.ietf.org/html/rfc4180) formatted text file. This file is made up of a number of columns representing the ERMI Data Model. This specification is versioned using the [semver versioning system](https://semver.org). The version can be found at the top of this document, the latest version can always be found at https://github.com/ermi-ltd/ermi-file-format/
 
 ## ERMI Data Model.
 
