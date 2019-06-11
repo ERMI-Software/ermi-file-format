@@ -81,7 +81,8 @@ The following columns **MAY** be present for the _payer_.
 | payerAccountIBAN | Payer account IBAN  | ```0-9[a-Z]``` |
 | payerAccountBicSwift | Payer account Bic Swift  | ```0-9[a-Z]``` |
 | payerRisk | The risk profile of the payer | 'very low', 'low', 'medium', 'medium high', 'high' |
-| payerCountryRiskList | The country risk list to use during analysis | 'default' or [custom lists](#configuration) | 
+| payerCountryRiskList | The country risk list to use during analysis | 'default' or [custom lists](#configuration) |
+| payerIsPEP | The Payer is identified as a Politically Exposed Person | 'true' or 'false' |
 
 The following columns **MAY** be present for the _beneficiary_.
 
