@@ -1,4 +1,4 @@
-# ERMI Batch File Format. (v2.4.0)
+# ERMI Batch File Format. (v2.5.0)
 
 ERMI is a lightweight transaction monitoring tool designed to simplify compliance with AML and related regulations. This repository contains information on the ERMI file format and how to provide data to ERMI for analysis.
 
@@ -83,6 +83,7 @@ The following columns **MAY** be present for the _payer_.
 | payerRisk | The risk profile of the payer | 'very low', 'low', 'medium', 'medium high', 'high' |
 | payerCountryRiskList | The country risk list to use during analysis | 'default' or [custom lists](#configuration) |
 | payerIsPEP | The Payer is identified as a Politically Exposed Person | 'true' or 'false' |
+| payerPastNinetyDaysMinumumTransactionValue | The minimum value of a transaction within a payers first 90 days of trading | ```[0-9]+(\.[0-9][0-9]?)? ``` |
 
 The following columns **MAY** be present for the _beneficiary_.
 
@@ -141,4 +142,3 @@ The following columns **MAY** be present for the _receiver_.
 ## Support
 
 If you require support, please contact support@ermi.co.uk or speak with your MLRO
-
