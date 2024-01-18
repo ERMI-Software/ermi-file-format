@@ -1,4 +1,4 @@
-# ERMI Batch File Format. (v2.5.0)
+# ERMI Batch File Format. (v2.6.0)
 
 ERMI is a lightweight transaction monitoring tool designed to simplify compliance with AML and related regulations. This repository contains information on the ERMI file format and how to provide data to ERMI for analysis.
 
@@ -63,6 +63,12 @@ The following Columns **MUST** be present in all files.
 | payerType   | The payer entity type. | 'individual' or 'corporate' |
 
 ## Optional Columns
+
+The following column **MAY** be present for _transaction_ metadata:
+
+| Name   | Brief Description | Validation |
+| :----- | :---------------- | :--------- |
+| status | The current status of the transaction. If provided, only ```completed``` transaction will be screened. | 'completed' or 'incomplete' |
 
 The following columns **MAY** be present for the _payer_.
 
