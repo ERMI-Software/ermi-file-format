@@ -85,7 +85,7 @@ The following columns **MAY** be present for the _payer_.
 | payerIsPEP | The Payer is identified as a Politically Exposed Person | 'true' or 'false' |
 | payerPastNinetyDaysMinumumTransactionValue | The minimum value of a transaction within a payers first 90 days of trading | ```[0-9]+(\.[0-9][0-9]?)? ``` |
 | payerPastYearExpectedTotal | The expected turn over for a payer over the previous 12 months in USD | ```[0-9]+(\.[0-9][0-9]?)? ``` |
-| payerDailyTotalThreshold | The maximum amount the payer is allowed to send before being flagged |
+| payerDailyTotalThreshold | The maximum amount in USD the payer is allowed to send before being flagged | ```[0-9]+(\.[0-9][0-9]?)? ``` |
 
 The following columns **MAY** be present for the _beneficiary_.
 
