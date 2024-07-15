@@ -58,7 +58,7 @@ The following Columns **MUST** be present in all files.
 | value | The quantity of currency sent as a float or integer | ```[0-9]+(\.[0-9][0-9]?)? ```|
 | beneficiaryID | A unique ID representing the beneficiary person or legal entity (for example, ERMI Software Ltd) | ```0-9[a-Z]``` |
 | beneficiaryCountry | The location where the beneficiary resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
-| payerID | A unique ID representing the beneficiary person or legal entity (for example, ERMI Software Ltd) | ```0-9[a-Z]``` |
+| payerID | A unique ID representing the person or legal entity sending funds, (for example, ERMI Software Ltd or 12345-UK" | ```0-9[a-Z]``` |
 | payerCountry | The location where the payer resides | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
 | payerType   | The payer entity type. | 'individual' or 'corporate' |
 
