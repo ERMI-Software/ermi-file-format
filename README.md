@@ -1,4 +1,4 @@
-# ERMI Batch File Format. (v2.6.0)
+# ERMI Batch File Format. (v2.7.0)
 
 ERMI is a lightweight transaction monitoring tool designed to simplify compliance with AML and related regulations. This repository contains information on the ERMI file format and how to provide data to ERMI for analysis.
 
@@ -81,6 +81,7 @@ The following columns **MAY** be present for the _payer_.
 | payerPostcode | The payers postcode| ```0-9[a-Z]``` |
 | payerCreatedAt | The date and time at which the payer was created| [ISO-8601](https://www.iso.org/iso-8601-date-and-time-format.html) |
 | payerAccountID | Human readable unique account ID | ```0-9[a-Z]``` |
+| payerPhotoID |  Unique number from a suitable form of photo identification | ```0-9[a-Z]``` |
 | payerAccountNumber | Payer account number within.  | ```0-9[a-Z]``` |
 | payerAccountRoutingCode | Payer account routine code, clearing code, or sort code  | ```0-9[a-Z]``` |
 | payerAccountCountry | The location of the payers bank account branch | [ISO-3166 ALPHA 2](https://www.iso.org/iso-3166-country-codes.html) |
